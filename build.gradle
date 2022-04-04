@@ -26,6 +26,28 @@ task showAdmins {
   println "Pata | Peta | Pita | Pota | Lulu"
 }
 
+task deployToStage {
+  doLast(){
+    println "Deployed to Stage"
+  }
+}
+
+task deployToProd {
+  doLast(){
+    println "Deployed to Production"
+  }
+}
+
+task cleanupFiles {
+  doLast(){
+    println "Cleaned Up Files"
+  }
+}
+
+deployToProd.dependsOn deployToStage
+deployToProd.finalizedBy cleanupFiles
+defaultTasks "deployToStage"
+
 project.description="Application to test properties"
 project.ext.env="mySecret key"
 project.version=0.1
