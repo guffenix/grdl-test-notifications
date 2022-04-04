@@ -8,6 +8,12 @@ task sayGoodbye {
   println "Chao Mundo"
   doFirst(){
     println 'Makes planning'
+    println project.name
+    println project.description
+    println project.env
+    println project.property('env')
+    println project.myKey
+    println project.version
   }
 
   doLast(){
@@ -19,3 +25,8 @@ task showAdmins {
   
   println "Pata | Peta | Pita | Pota | Lulu"
 }
+
+project.description="Application to test properties"
+project.ext.env="mySecret key"
+project.version=0.1
+project.ext.myKey="projectX"
