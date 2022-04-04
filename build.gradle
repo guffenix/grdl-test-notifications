@@ -6,6 +6,13 @@
  */
 task sayGoodbye {
   println "Chao Mundo"
+  doFirst(){
+    println 'Makes planning'
+  }
+
+  doLast(){
+    println 'Ending correctly'
+  }
 }
 
 task showAdmins {
